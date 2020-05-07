@@ -62,10 +62,10 @@ a {
 }
 .tags-grid{
   margin: 1rem 0;
-  display: flex;
-  /* grid-template-columns: repeat(auto-fill, ); 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr) ); 
   grid-auto-rows: 32px;
-  grid-gap: 16px; */
+  grid-gap: 16px;
 
 }
 .tag-elem-div{
@@ -73,8 +73,8 @@ a {
   justify-content: center;
   align-items: center;
   border-radius: 16px;
-  padding: 6px 16px;
-  margin-right: 16px;
+  /* padding: 6px 16px; */
+  /* margin-right: 16px; */
   border: 2px solid #b0b0b0;
   background: rgb(100, 100, 100);
   

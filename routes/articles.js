@@ -163,7 +163,7 @@ router.post('/:id', function(req, res, next) {
         })
 
         oldTags.forEach(tagname =>{
-            Tag.findOne({tagname}, (err, tag) =>{
+             Tag.findOne({tagname}, (err, tag) =>{
                 if(err)
                     return next(err);
                 if(!tag){
