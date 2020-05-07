@@ -1,0 +1,64 @@
+<%- include('partials/header') -%>
+<div>
+    <div>
+        <h2 class='article-page-title'><%= article.title%></h2>
+        <h4 class='article-page-author'>By: <%= article.author%></h4>
+        <% console.log(article.description) %>
+        <% var arr = article.description.split(/\r?\n/)%>
+        <% arr.forEach(elem => {  %>
+            <p class='article-p'><%= elem %></p>
+        <%}); %>
+        <div class='like-grid'>
+            <a href='/articles/<%= article.id%>/like'><i class="fas fa-thumbs-up"></i></a>
+            <span class='likes-count'><%= `Likes: ${article.likes}`%></span>
+            <a href='/articles/<%= article.id %>/dislike'><i class="fas fa-thumbs-down"></i></a>
+        </div>
+        <div class='tags-grid'>
+            <% article.tags.forEach(element => { %>
+                <div class="tag-elem-div">
+                    <a href="/tags/<%= element %>"class="tag-elem"> <%= element%></a>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    <% if(article.comments.length) { %>
+        <h2>Responses<%= `(${article.comments.length})` %></h2>
+        <div class='comments-list-grid'>
+        <% article.comments.forEach(elem => { %>
+            <div class='single-comment'>
+                <div class="comment-content-div">
+                
+                    <p>&#8220;<%= `${elem.content.trim()}`%>&#8221;</p>
+                    <a href="/comments/<%= elem.id %>/edit"><i class="far fa-edit"></i></a>
+                    <a href="/comments/<%= elem.id %>/delete"><i class="far fa-trash-alt"></i></a>
+                </div>
+                <div class="comment-author-div">
+                    <p><span class="by-span">By:</span> <%= elem.author%></p>
+                </div>
+            </div>
+            <% })%>
+        </div>
+        <% } else { %>
+         <h2>No response, be the first one to post.</h2>
+        <% } %> 
+    <form class="comment-form" action="/articles/<%= article.id %>/comments" method="POST">
+        <textarea class="comment-area" name="content" placeholder="Add response"></textarea>
+        <div class="comment-flex-col-2">
+            <input type="text" class="comment-author-input" name="author" placeholder="Reader's name" />
+            <input id="comment-btn" type="submit" value="Add Response">
+        </div>
+    </form>
+</div>
+<div class="grid-col-3">
+
+        <a href='/articles'><i title="Back" class="fas fa-backward"></i></a>
+
+
+        <a href='/articles/<%= article.id %>/delete'><i title="Delete" class="far fa-trash-alt"></i></a> 
+
+
+        <a href='/articles/<%= article.id %>/edit'><i title="Edit" class="far fa-edit"></i></a>
+
+</div>
+<script src="/javascripts/script.js" defer></script>
+<%- include('partials/footer') -%>
