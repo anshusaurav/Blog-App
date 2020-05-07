@@ -7,6 +7,9 @@ body {
 .container{
   width: 1200px;
   margin: 0 auto;
+  border-radius: 24px;
+  border: 2px ridge rgb(0, 0, 0);
+  padding: 1rem;
 }
 h1{
   text-align: center;
@@ -145,14 +148,33 @@ a {
 .add-elem-div > input[type=text] {
   font-family: 'Muli', sans-serif;
   width: 100%;
-  border-radius: 2px;
-  border: none;
   padding: 4px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  border-radius: 4px;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: rgb(60, 60, 60);
+  overflow-y: hidden;
+  box-sizing: content-box;
 }
 textarea{
   font-family: 'Muli', sans-serif;
   width: 100%;
   min-height: 50vh;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #d3d3d3;
+  border-radius: 8px;
+  box-sizing: content-box;
+  background-color: rgb(60, 60, 60);
+  overflow-y: hidden;
+  padding: 1.5rem 0.2rem;
+  font-size: 16px;
+  /* resize: none; */
 }
 .title-article{
   line-height: 56px;
@@ -180,6 +202,16 @@ textarea{
   border: none;
   line-height: 20px;
   padding: 2px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  border-radius: 4px;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: rgb(60, 60, 60);
+  overflow-y: hidden;
+  box-sizing: content-box;
+  color: #111;
 }
 .button, input[type=submit]{
   font-family: 'Muli', sans-serif;
