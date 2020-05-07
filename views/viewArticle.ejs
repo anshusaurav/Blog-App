@@ -1,5 +1,9 @@
 <%- include('partials/header') -%>
 <div>
+    <div class='grid-col-end'>
+        <a href='/articles/<%= article.id %>/edit'><i title="Edit" class="far fa-edit"></i></a>
+        <a href='/articles/<%= article.id %>/delete'><i title="Delete" class="far fa-trash-alt"></i></a> 
+    </div>
     <div>
         <h2 class='article-page-title'><%= article.title%></h2>
         <h4 class='article-page-author'>By: <%= article.author%></h4>
@@ -50,15 +54,8 @@
     </form>
 </div>
 <div class="grid-col-3">
-
-        <a href='/articles'><i title="Back" class="fas fa-backward"></i></a>
-
-
-        <a href='/articles/<%= article.id %>/delete'><i title="Delete" class="far fa-trash-alt"></i></a> 
-
-
-        <a href='/articles/<%= article.id %>/edit'><i title="Edit" class="far fa-edit"></i></a>
-
+    <a href='/articles'><i title="Back" class="fas fa-backward"></i></a>
+    
 </div>
 <script src="/javascripts/script.js" defer></script>
 <%- include('partials/footer') -%>

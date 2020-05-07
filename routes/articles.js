@@ -223,7 +223,7 @@ router.get('/:id/delete', function(req, res, next) {
 
                 }
                 else{
-                    Tag.findOneAndUpdate({tagname},{$pull:{articles:data.id}},{new:true}, (err,updatedTag) => {
+                    Tag.findOneAndUpdate({tagname},{$pull:{articles:article.id}},{new:true}, (err,updatedTag) => {
                         if(err) 
                             return next(err);
                         if(updatedTag.articles.length == 0) {

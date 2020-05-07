@@ -93,6 +93,19 @@ a {
   margin: 32px 0;
   box-sizing: content-box;
 }
+.grid-col-end{
+  display: grid;
+  grid-template-columns: repeat(2, 40px);
+  justify-content: end;
+  width: 20%;
+  margin-left: 80%;
+  grid-gap: 32px;
+  /* margin: 32px 0; */
+  margin-bottom: 32px;
+  margin-top: 32px;
+  box-sizing: content-box;
+}
+
 .grid-col-3 > a{
   display: flex;
   cursor: pointer;
@@ -100,10 +113,19 @@ a {
   align-items: center;
   border-radius: 6px;
   padding: 12px;
-  border: 2px solid #060606
+  border: 2px solid #686868;
 }
 
-.grid-col-3 > a:hover{
+.grid-col-end > a{
+  display: flex;
+  cursor: pointer;
+  justify-content: end;
+  align-items: center;
+  border-radius: 6px;
+  padding: 12px;
+  border: 2px solid #686868;
+}
+.grid-col-3 > a:hover, .grid-col-end > a:hover{
   border: 2px solid #9c9b9b;
   transition: all 0.25s ease-in-out;
   color: rgb(200, 200, 200);
