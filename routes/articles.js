@@ -153,7 +153,7 @@ router.post('/:id', function(req, res, next) {
     let id = req.params.id;
     req.body.tags = req.body.tags.split(', ');
     let newTags = req.body.tags;
-    Article.findByIdAndUpdate(id, req.body, (err, data) => {
+    Article.findByIdAndUpdate(id, req.body,  {new: true, runValidators: true},(err, data) => {
         if(err) 
             return next(err);
         let oldTags = data.tags;

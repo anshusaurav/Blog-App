@@ -46,9 +46,9 @@
          <h2>No response, be the first one to post.</h2>
         <% } %> 
     <form class="comment-form" action="/articles/<%= article.id %>/comments" method="POST">
-        <textarea class="comment-area" name="content" placeholder="Add response"></textarea>
+        <textarea class="comment-area" name="content" placeholder="Add response" required></textarea>
         <div class="comment-flex-col-2">
-            <input type="text" class="comment-author-input" name="author" placeholder="Reader's name" />
+            <input type="text" class="comment-author-input" name="author" placeholder="Reader's name" required/>
             <input id="comment-btn" type="submit" value="Add Response">
         </div>
     </form>

@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 <form class="edit-action-form" action="/articles/<%= article.id %>/comments/<%= comment.id %>/edit" method="POST"> 
-    <textarea class="comment-area" name="content" > <%=comment.content %>
+    <textarea class="comment-area" name="content" required> <%=comment.content %>
     </textarea>
     <div class="comment-flex-col-2">
         <input type="text" class="comment-author-input" name="author" placeholder="Reader's name" value="<%= comment.author %>" readonly/>
