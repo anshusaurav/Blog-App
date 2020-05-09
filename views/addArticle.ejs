@@ -2,13 +2,13 @@
     <h1>Add Article</h1>
     <form class="add-article" action="/articles" method="POST">
         <div class="add-elem-div">
-            <input class="title-article" type="text" name="title" placeholder="Title">
+            <input class="title-article" type="text" name="title" placeholder="Title" required>
         </div>
         <div class="add-elem-div">
-            <input class="author-article" type="text" name="author" placeholder="Author's Name">
+            <input class="author-article" type="text" name="author" placeholder="Author's Name" required>
         </div>
         <div class="add-elem-div">
-            <textarea name="description" rows="4" cols="50" placeholder="Description"></textarea>
+            <textarea name="description" rows="4" cols="50" placeholder="Description" required></textarea>
         </div>
         <div class="add-elem-div">
             <input class="tags-article" type="text" name="tags" placeholder="TAGS (like HTML, CSS, Javascript)">
